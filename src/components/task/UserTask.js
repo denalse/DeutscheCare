@@ -42,12 +42,12 @@ export const UserTask = () => {
   }
 
   const handleChangeTask = (e) => {
-    setTask(e.target.value);
+    setTask({task: e.target.value, id: 5, time:new Date()});
   }
 
-  const handleSubmit = (props, e) => {
+  const handleSubmit = (e) => {
     // e.preventDefault();
-    if (props.task.id) {
+    if (task.id) {
       const date = dateSelected;
       const updateTask = tasks.map((todo) => (
         todo.id === task.id ? { id: task.id, name: e.target.task.value, time: `${date.toLocaleDateString()} ${date.toLocaleTimeString()}` } : todo
