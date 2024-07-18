@@ -22,24 +22,26 @@ export const ShowTask = ({ tasklist, setTasklist, task, setTask }) => {
         </button>
       </div>
 
-      <ul>
-        {tasklist.map((todo) => (
-          <li key={todo.id}>
-            <p>
-              <span className="name">{todo.name}</span>
-              <span className="time">{todo.time}</span>
-            </p>
-            <i
-              className="bi bi-pencil-square"
-              onClick={() => handleEdit(todo.id)}
-            ></i>
-            <i
-              className="bi bi-trash"
-              onClick={() => handleDelete(todo.id)}
-            ></i>
-          </li>
-        ))}
-      </ul>
+	<ul>
+                {
+                    tasklist.map((todo) => (
+
+                        viewTaskReadOnly(todo)
+
+                    ))
+                }
+
+            </ul>
     </section>
   );
+  
+      function viewTaskReadOnly(todo) {
+        return <li key={todo.id}><p>
+            <span className="name">{todo.name}</span>
+            <span className="time">{todo.time}</span>
+        </p>
+            <i className="bi bi-pencil-square" onClick={() => handleEdit(todo.id)}></i>
+            <i className="bi bi-trash" onClick={() => handleDelete(todo.id)}></i>
+        </li>;
+    }
 };
