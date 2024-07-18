@@ -1,0 +1,46 @@
+/* Profile.css */
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-top: 70px;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+  
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .profile-details, .todo-list {
+    flex: 1;
+    position: relative;
+    color: black;
+  }
+  
+  .qr-code {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .qr-code img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-details h2 {
+    margin-top: 0;
+  }
+  
+
+  /* background-image: url('../assets/home.png'); */

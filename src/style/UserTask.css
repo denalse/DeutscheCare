@@ -1,0 +1,162 @@
+.task-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 10px); /* Adjust this value based on header's height */
+    width: 100vw;
+    background-image: url('../assets/home-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-bottom: 40vh;
+}
+
+.addTask {
+    padding: 20px 15px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .addTask form{
+    display: flex;
+    gap: 7px;
+  }
+  
+  .addTask form input{
+    flex-grow: 1;
+    padding: 5px 5px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .addTask form input:focus{
+    outline: 0.5px solid #eaeaea;
+  }
+  
+  .addTask form button{
+    background-color: #03ba5c;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .addTask form button:hover{
+    background-color: #03b056;
+  }
+  
+  .showTask{
+    padding: 20px 15px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin: 20px auto;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .showTask div.head{
+    padding: 10px 0px 20px 0px;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    align-items: center;
+  }
+  
+  .showTask div.head div{
+    flex-grow: 1;
+  }
+  
+  .showTask .title{
+    font-size: 18px;
+    font-weight: 600;
+    user-select: none;
+  }
+  
+  .showTask .count{
+    background-color: #dfdfdf;
+    color: #525252;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    user-select: none;
+  }
+  
+  .showTask .clearAll{
+    background-color: #0f6af3;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0px;
+    font-size: 16px;
+  }
+  
+  .showTask .clearAll:hover{
+    background-color: #1061db;
+  }
+  
+  .showTask ul{
+    margin: 30px 5px 20px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .showTask li{
+    padding: 15px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    gap: 5px;
+    width: 350px;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    border-left: 5px solid #1365dfaf;
+  }
+  
+  .showTask li:hover{
+    background-color: #f8f8f8;
+  }
+  
+  .showTask li p{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .showTask li .name{
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+  
+  .showTask li .time{
+    font-size: 12px;
+    color: #737373;
+  }
+  
+  .showTask i.bi-pencil-square{
+    font-size: 18px;
+    color: #1363DF;
+    cursor: pointer;
+  }
+  
+  .showTask i.bi-trash{
+    font-size: 18px;
+    color: #D82148;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .showTask li{
+      width: 100%;
+    }
+  }
+  
