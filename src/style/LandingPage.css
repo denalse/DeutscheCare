@@ -42,12 +42,13 @@ body, html {
     color: #fff; /* Ensure text is visible on the background */
   }
   
-  h1 {
+  .myFont {
     font-size: 7.5em;
+    font-weight: bold;
   }
   
   p {
-    font-size: 1.2em;
+    font-size: 2.2em;
     /* margin: 0.1em 0; */
   }
   

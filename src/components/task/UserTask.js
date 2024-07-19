@@ -4,15 +4,8 @@ import moment from 'moment';
 import Alert from "./Alert";
 
 export const UserTask = () => {
-  // var tasks = [
-  //   { id: 1, name: "Janice Rolland" },
-  //   { id: 2, name: "Ken Junior" },
-  //   { id: 3, name: "Mandy Brooklyn" },
-  // ];
-
-  const username = "Janice Rolland";
-
   
+  const username = "Janice Rolland";
 
   const [tasks, setTasks] = useState([
     { id: 1, name: "Janice Rolland", task: "Eat Breakfast", time: "10 AM" },

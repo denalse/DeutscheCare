@@ -11,8 +11,8 @@ export const LandingPage = () => {
   return (
     <div className="landing-page">
       <div className="content">
-        <h1>Hello</h1>
-        <p>Your personal task manager</p>
+        <h1 className='myFont'>Deutsche Bank</h1>
+        <p>Supporting every step, every memory</p>
       </div>
       <button className="get-started-button" onClick={handleGetStartedClick}>
         Get Started
