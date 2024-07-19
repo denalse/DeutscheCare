@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../style/UserTask.css";
+import moment from 'moment';
+import Alert from "./Alert";
 
 export const UserTask = () => {
   // var tasks = [
@@ -17,7 +19,9 @@ export const UserTask = () => {
     { id: 2, name: "Ken Junior", task:"Dring Water" , time: "10:30 AM" },
     { id: 3, name: "Mandy Brooklyn", task: "Login for work", time: "11 AM" },
   ]);
-  const [task, setTask] = useState({});
+
+
+  const [task, setTask] = useState({task:'', time:''});
   useEffect(() => {
     console.log(tasks);
   },[tasks]);
@@ -38,15 +42,18 @@ export const UserTask = () => {
   const handleChange = (ev) => {
     if (!ev.target['validity'].valid) return;
     const dt = ev.target['value'] + ':00Z';
+    const time = moment(dt).format("hh:mm");
+    setTask({...task, time, dt});
     onDateChange(dt);
   }
 
   const handleChangeTask = (e) => {
-    setTask({task: e.target.value, id: 5, time:new Date()});
+    const d = moment().format("YYYY-MM-DDThh:mm");
+    setTask({...task,task: e.target.value});
   }
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     if (task.id) {
       const date = dateSelected;
       const updateTask = tasks.map((todo) => (
@@ -59,11 +66,10 @@ export const UserTask = () => {
       console.log(e);
       const date = dateSelected;
       const newTask = {
-        // id: tasks.size+1,
-        id: 5,
+        id: task.dt,
         name: username,
         task: task.task,
-        time: task.date
+        time: task.time
       }
       console.log(newTask);
       setTasks([...tasks, newTask]);
@@ -75,14 +81,16 @@ export const UserTask = () => {
   }
 
   return (
+    <div>
+    <Alert color="info" visible={visible} setVisible={setVisible} contents={alertList}/>
     <div className="user-page-container">
       <div className="user-list-container">
         <h2>My Schedule</h2>
         <ul className="task-list">
           {tasks.map((task) => (
             <li key={task.id} className="user-item">
-              <span className="left">{task.time}</span>
-              {task.task}
+              <span className="col-3">{task.time}</span>
+              <span className="col-9">{task.task}</span>
             </li>
           ))}
         </ul>
@@ -91,16 +99,17 @@ export const UserTask = () => {
         <h2>Add Task</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="task">Task</label>
+            <label >Task</label>
             <input type="text" id="task" name="task" required onChange={handleChangeTask}
                     autoComplete="off"/>
             <input type="datetime-local" required={true}
-              value={(dateSelected || new Date()).toString().substring(0, 16)}
+              //value={(dateSelected || new Date()).toString().substring(0, 16)}
               onChange={handleChange} />
           </div>
-          <button type="submit">Add Task</button>
+          <button type="submit" >Add Task</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

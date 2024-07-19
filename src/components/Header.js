@@ -11,8 +11,8 @@ export const Header = () => {
         <Link to = "/"><span>DeutscheCare+</span></Link>
       </span>
         <div className="top-nav">
-          <Link to="/task" className="nav-button"> Task </Link>
-          <Link to="/profile" className="nav-button"> Profile </Link>
+          <Link to="user/task" className="nav-button"> Task </Link>
+          <Link to="/user/profile" className="nav-button"> Profile </Link>
         </div>
     </header>
   );
